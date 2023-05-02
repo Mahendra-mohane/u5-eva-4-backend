@@ -1,0 +1,28 @@
+{
+  "name": "backend-ip-info-app",
+  "version": "1.0.0",
+  "description": "BACKEND - IP INFO APP\r IP Info Application\r Make an IP info application using Nodejs, Express, MongoDB, Redis etc which accepts an valid IP address from a user and returns the IP info (the city where that IP is present)\r Make sure that a user is logged in to use your application.\r Maintain a blacklisting mechanism for managing logout and store the blacklisted tokens in Redis (not in an array in a file or somewhere in the nodejs server)\r Have a meaningful endpoint to show current location (just current city is enough, exact co-ordinates are not required) for a specific IP given by the user.\r Use any API such as https://ipapi.co/api/#introduction or any API by googling on your own, to retrieve the current city for a specific IP.\r Use Redis to cache the IP info. This way your application can quickly retrieve the IP Info/City for a particular IP without having to make a new API request, irrespective of the user, for a particular IP.\r The data stored in Redis for a particular IP should expire in 6 hours.\r ^ Implement a mechanism to check if the data is already present in Redis before making an API call to get IP Info.\r Use MongoDB Atlas to store each user's searches in the DB\r Use Winston for logging - log any errors in application to a collection in the DB.\r Have a validation middleware which checks that the IP passed by the user to get the IP info is in valid IP address format, so that you don't waste an API request to any IP info API with invalid IP address.\r Follow all the best practices, such as following the MVC structure, storing all secret things in .env, committing regularly with proper git messages, clean code, etc.\r Deploy Backend\r Neatly mention in your readme.md file how your deployed link should be used with endpoints and their description etc\r NOTE\r Feel free to refer any official documentation if required.\r Please note that some of the free API's you'll be using to get \"IP info\" will have limits on how many requests you can make in a free tier, so use it mindfully.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server":"nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.7.0",
+    "express-winston": "^4.2.0",
+    "ioredis": "^5.3.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.1.0",
+    "nodemon": "^2.0.22",
+    "redis": "^4.6.6",
+    "winston": "^3.8.2"
+  }
+}
